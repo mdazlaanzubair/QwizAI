@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Added the @tailwind directives for each of Tailwind’s layers of this project ./src/index.css file. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
