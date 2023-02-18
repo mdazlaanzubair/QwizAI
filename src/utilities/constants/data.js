@@ -1,14 +1,14 @@
-const content = {
+export const content = {
   hero: {
     title:
       "Are you tired of sifting through pages of text to find the information you need?",
     para1:
       "Look no further! This AI-powered software simplifies the process by finding answers and summarizing text quickly and efficiently.",
-    para2: "Take your productivity to the next level with our all-in-one tool!",
+    para2: "Take your productivity to the next level with ",
   },
   about: {
     para1:
-      "Qwizbot is designed to help you perform a wide range of tasks with the help of AI. From finding answers to summarizing text, classifying words to creating one-line summaries of paragraphs, and even AI writing, our software streamlines your work and saves you time.",
+      "Qwizbot is designed to help you perform a wide range of tasks with the help of AI. From finding answers to summarizing text, classifying words and sentences, summarize  paragraphs, and even AI writing, Qwizbot streamlines your work and saves you time.",
   },
   callToAction: {
     para1:
@@ -20,6 +20,7 @@ const content = {
   },
   features: [
     {
+      icon:"",
       title: "Find answers quickly",
       desc: "Our software scans through pages of text to find the information you need in seconds. Say goodbye to the headache of manual research!",
     },
