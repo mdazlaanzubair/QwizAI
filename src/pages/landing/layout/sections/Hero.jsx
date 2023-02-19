@@ -23,30 +23,30 @@ const Hero = () => {
           </p>
           <a
             href="/"
-            class="mt-8 mr-3 inline-flex items-center rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
+            className="mt-8 mr-3 inline-flex items-center rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
           >
-            <span class="text-sm font-medium"> Get Started </span>
+            <span className="text-sm font-medium"> Get Started </span>
 
             <svg
-              class="ml-3 h-5 w-5"
+              className="ml-3 h-5 w-5"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
           </a>
           <a
             href="#about"
-            class="mt-8 inline-flex items-center rounded border border-indigo-600 text-indigo-600 px-8 py-3 bg-white hover:bg-indigo-600 hover:text-white active:border-0"
+            className="mt-8 inline-flex items-center rounded border border-indigo-600 text-indigo-600 px-8 py-3 bg-white hover:bg-indigo-600 hover:text-white active:border-0"
           >
-            <span class="text-sm font-medium"> Explore </span>
+            <span className="text-sm font-medium"> Explore </span>
           </a>
         </div>
         <div className="relative overflow-hidden w-full lg:w-7/12 lg:-mr-16">
