@@ -6,7 +6,7 @@ const About = () => {
     <section id="about">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:h-full shadow-2xl">
+          <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:h-full shadow-2xl hidden lg:block">
             <img
               alt="Party"
               src={about_img}

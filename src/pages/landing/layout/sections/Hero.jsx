@@ -49,10 +49,9 @@ const Hero = () => {
             <span className="text-sm font-medium"> Explore </span>
           </a>
         </div>
-        <div className="relative overflow-hidden w-full lg:w-7/12 lg:-mr-16">
-          <img src="" alt="" />
+        <div className="relative overflow-hidden w-full lg:w-7/12 lg:-mr-16 hidden lg:block">
           <img
-            className="mx-auto mix-blend-multiply"
+            className="mx-auto mix-blend-multiply my-5"
             src={hero_bg_img}
             alt="project illustration"
             height=""
