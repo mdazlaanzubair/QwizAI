@@ -1,3 +1,4 @@
+import { useState } from "react";
 import cta_img_1 from "../../assets/illustrations/CTA-img-1.png";
 import cta_img_2 from "../../assets/illustrations/asset_1.png";
 import { content } from "../../utilities/constants/data";
@@ -14,17 +15,15 @@ import Why from "./layout/sections/Why";
 import Testimonial from "./layout/sections/Testimonial";
 import Faq from "./layout/sections/Faq";
 import Contact from "./layout/sections/Contact";
-import { useEffect } from "react";
+import JumpToTop from "./layout/components/JumpToTop";
 
 const Home = () => {
-  // 👇️ scroll to top on page load
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
+  const [showJumpBtn, setShowJumpBtn] = useState(false);
 
-  useEffect(() => {
-    scrollToTop();
-  }, []);
+  // 👇️ get page scroll position and at "400px" display "jumpToTopBtn"
+  window.addEventListener("scroll", () => {
+    window.pageYOffset >= 150 ? setShowJumpBtn(true) : setShowJumpBtn(false);
+  });
 
   return (
     <>
@@ -50,27 +49,9 @@ const Home = () => {
       />
       <Contact />
       <Footer />
-      <button
-        className="bg-indigo-600 p-3 rounded-full fixed bottom-3 right-3"
-        onClick={() => {
-          scrollToTop();
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          class="w-6 h-6 text-white"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.5 15.75l7.5-7.5 7.5 7.5"
-          />
-        </svg>
-      </button>
+
+      {/* displays this components only when page scrolls "400px" Y-axis */}
+      {showJumpBtn ? <JumpToTop /> : ""}
     </>
   );
 };

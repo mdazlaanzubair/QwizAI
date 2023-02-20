@@ -3,33 +3,33 @@ import { content } from "../../../../utilities/constants/data";
 const Why = () => {
   return (
     <section id="why">
-      <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
-        <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-start lg:gap-x-16">
-          <div class="mx-auto max-w-lg text-center lg:mx-0 lg:text-left">
-            <h2 class="text-3xl font-bold sm:text-4xl">
+      <div className="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+        <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-start lg:gap-x-16">
+          <div className="mx-auto max-w-lg text-center lg:mx-0 lg:text-left">
+            <h2 className="text-3xl font-bold sm:text-4xl">
               Why <strong className="text-primary">Qwizbot</strong>?
             </h2>
 
-            <p class="mt-4 text-gray-600">{content.why.para1}</p>
-            <p class="mt-4 text-gray-600">{content.why.para2}</p>
+            <p className="mt-4 text-gray-600">{content.why.para1}</p>
+            <p className="mt-4 text-gray-600">{content.why.para2}</p>
 
             <a
               href="#"
-              class="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+              className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
             >
               Give it a shot
             </a>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {content.why.qna.map((item, index) => (
               <div
                 key={index}
-                class="shadow-md hover:shadow-xl block rounded-xl p-4"
+                className="shadow-md hover:shadow-xl block rounded-xl p-4"
               >
-                {/* <span class="inline-block rounded-lg bg-gray-50 p-3">
+                {/* <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
-                    class="h-6 w-6"
+                    className="h-6 w-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -46,9 +46,9 @@ const Why = () => {
                   </svg>
                 </span> */}
 
-                <h2 class="my-3 font-bold">{item.title}</h2>
+                <h2 className="my-3 font-bold">{item.title}</h2>
 
-                <p class="hidden sm:mt-1 sm:block sm:text-sm text-gray-600">
+                <p className="hidden sm:mt-1 sm:block sm:text-sm text-gray-600">
                   {item.desc}
                 </p>
               </div>

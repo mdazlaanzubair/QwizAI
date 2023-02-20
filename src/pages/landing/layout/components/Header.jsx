@@ -10,14 +10,49 @@ const Header = () => {
         </a>
       </div>
       <div className="flex-none px-2 mx-2">
-        <div className="items-stretch hidden lg:flex">
-          <AnchorLink href="#home" className="p-3 border-b-4 hover:border-b-indigo-600">Home</AnchorLink>
-          <AnchorLink href="#about" className="p-3 border-b-4 hover:border-b-indigo-600">About</AnchorLink>
-          <AnchorLink href="#features" className="p-3 border-b-4 hover:border-b-indigo-600">Features</AnchorLink>
-          <AnchorLink href="#pricing" className="p-3 border-b-4 hover:border-b-indigo-600">Pricing</AnchorLink>
-          <AnchorLink href="#why" className="p-3 border-b-4 hover:border-b-indigo-600">Why Qwizbot</AnchorLink>
-          <AnchorLink href="#testimonial" className="p-3 border-b-4 hover:border-b-indigo-600">Reviews</AnchorLink>
-          <AnchorLink href="#faq" className="p-3 border-b-4 hover:border-b-indigo-600">FAQ</AnchorLink>
+        <div className="items-stretch hidden lg:flex space-x-5">
+          <AnchorLink
+            href="#home"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            Home
+          </AnchorLink>
+          <AnchorLink
+            href="#about"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            About
+          </AnchorLink>
+          <AnchorLink
+            href="#features"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            Features
+          </AnchorLink>
+          <AnchorLink
+            href="#pricing"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            Pricing
+          </AnchorLink>
+          <AnchorLink
+            href="#why"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            Why Qwizbot
+          </AnchorLink>
+          <AnchorLink
+            href="#testimonial"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            Reviews
+          </AnchorLink>
+          <AnchorLink
+            href="#faq"
+            className="p-3 border-b-2 font-bold uppercase text-sm border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+          >
+            FAQ
+          </AnchorLink>
         </div>
       </div>
     </header>
