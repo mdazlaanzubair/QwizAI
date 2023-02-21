@@ -1,26 +1,21 @@
 // react router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Ques_Ans from "./pages/application/components/Ques_Ans";
+import Dashboard from "./pages/application/Dashboard";
 import Home from "./pages/landing/Home";
 
 function App() {
-  // list of routes
-  const routes_list = [
-    {
-      path: "/",
-      element: <Home />,
-    },
-  ];
-
   return (
     <div
-      className="App relative bottom-0 top-0 max-h-full max-w-full font-default"
+      className="App relative bottom-0 top-0 max-h-full max-w-full font-default pt-5"
       data-theme="light"
     >
       <BrowserRouter>
         <Routes>
-          {routes_list.map((item, index) => (
-            <Route key={index} path={item.path} element={item.element} exact />
-          ))}
+          <Route path="/" element={<Home />} exact />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="qna" element={<Ques_Ans />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
