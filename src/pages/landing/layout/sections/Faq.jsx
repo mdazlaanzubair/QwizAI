@@ -4,21 +4,21 @@ const Faq = () => {
   return (
     <section id="faq" className="text-gray-600 body-font">
       <div className="container flex flex-wrap px-5 py-24 mx-auto items-start">
-        <div className="w-1/2 py-8 border-gray-200 mx-auto">
-          <p className="py-3 text-indigo-600 uppercase text-xs font-bold">
+        <div className="w-full lg:w-1/2 py-8 border-gray-200 mx-auto">
+          <p className="py-3 text-indigo-600 uppercase text-xs font-bold lg:text-left text-center">
             Have any question?
           </p>
-          <h1 className="text-3xl font-bold sm:text-4xl text-gray-900">
+          <h1 className="text-3xl font-bold sm:text-4xl text-gray-900 lg:text-left text-center">
             Frequently Asked Questions
           </h1>
-          <p className="leading-relaxed text-base pt-3">
+          <p className="leading-relaxed text-base pt-3 lg:text-left text-center">
             This section addresses some common questions that users may have
             about <strong className="text-primary">Qwizbot</strong>. Whether
             you're a new or existing user, these answers can help you make the
             most of our AI-powered tools.
           </p>
         </div>
-        <div className="flex flex-col w-1/2 md:pl-12">
+        <div className="flex flex-col w-full lg:w-1/2 md:pl-12">
           <div className="space-y-4">
             {content.faq.map((item, index) => (
               <details

@@ -1,5 +1,6 @@
 import { content } from "../../../../utilities/constants/data";
 import about_img from "../../../../assets/illustrations/about-img.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const About = () => {
   return (
@@ -20,9 +21,12 @@ const About = () => {
 
             <p className="mt-4 text-gray-600">{content.about.para1}</p>
 
-            <a href="#features" className="text-indigo-600 inline-block mt-3">
+            <AnchorLink
+              href="#features"
+              className="text-indigo-600 inline-block mt-3"
+            >
               <span className="text-sm font-medium">Learn more</span>
-            </a>
+            </AnchorLink>
           </div>
         </div>
       </div>

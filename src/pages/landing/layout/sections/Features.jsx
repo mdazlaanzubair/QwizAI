@@ -24,7 +24,7 @@ const Features = () => {
         <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
           {content.features.map((feature, index) => (
             <div
-              className="flex items-start transform ease-out duration-500 hover:bg-gradient-to-r from-[#0b0133] to-[#000525] hover:shadow-lg shadow p-5 rounded-lg border-none"
+              className="flex items-start transform ease-out duration-500 bg-gradient-to-r from-[#0b0133] to-[#000525] hover:shadow-2xl shadow p-5 rounded-lg border-none"
               key={index}
             >
               <span className="flex-shrink-0 rounded-lg bg-indigo-800 p-4">

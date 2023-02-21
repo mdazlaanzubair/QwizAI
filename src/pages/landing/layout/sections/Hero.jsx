@@ -1,10 +1,11 @@
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import hero_bg_img from "../../../../assets/illustrations/hero-img.png";
 import { content } from "../../../../utilities/constants/data";
 
 const Hero = () => {
   return (
     <section
-      id="hero"
+      id="home"
       className="pt-32 md:py-12 xl:container m-auto px-6 md:px-12"
     >
       <div
@@ -42,12 +43,12 @@ const Hero = () => {
               />
             </svg>
           </a>
-          <a
+          <AnchorLink
             href="#about"
             className="mt-8 inline-flex items-center rounded border border-indigo-600 text-indigo-600 px-8 py-3 bg-white hover:bg-indigo-600 hover:text-white active:border-0"
           >
             <span className="text-sm font-medium"> Explore </span>
-          </a>
+          </AnchorLink>
         </div>
         <div className="relative overflow-hidden w-full lg:w-7/12 lg:-mr-16 hidden lg:block">
           <img

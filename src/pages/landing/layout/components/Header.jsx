@@ -12,22 +12,22 @@ const Header = () => {
       id: "#about",
       title: "About",
     },
-    {
-      id: "#features",
-      title: "Features",
-    },
+    // {
+    //   id: "#features",
+    //   title: "Features",
+    // },
     {
       id: "#pricing",
       title: "Pricing",
     },
-    {
-      id: "#why",
-      title: "Why Qwizbot",
-    },
-    {
-      id: "#testimonial",
-      title: "Testimonial",
-    },
+    // {
+    //   id: "#why",
+    //   title: "Why Qwizbot",
+    // },
+    // {
+    //   id: "#testimonial",
+    //   title: "Testimonial",
+    // },
     {
       id: "#faq",
       title: "FAQ",
@@ -42,11 +42,14 @@ const Header = () => {
     window.addEventListener("scroll", () => {
       const element = document.getElementById("navbar");
       if (window.pageYOffset >= 150) {
-        element.classList.add(...["sticky", "top-0"]);
+        element.classList.add(
+          ...["sticky", "top-0", "z-10", "bg-white", "shadow-lg", "py-5"]
+        );
       } else {
-        element.classList.remove(...["sticky", "top-0", "bg-black"]);
+        element.classList.remove(
+          ...["sticky", "top-0", "z-10", "bg-white", "shadow-lg", "py-5"]
+        );
       }
-      // window.pageYOffset >= 150 ? setShowJumpBtn(true) : setShowJumpBtn(false);
     });
   }, []);
 
@@ -57,18 +60,8 @@ const Header = () => {
           <img className="w-36" src={app_logo} alt="Qwizbot logo" />
         </a>
       </div>
-      <div className="flex-none px-2 mx-2">
-        <div className="items-stretch hidden lg:flex space-x-5">
-          {sections_routes.map((route, index) => (
-            <AnchorLink
-              key={index}
-              href={route.id}
-              className="p-1 border-b-2 font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
-            >
-              {route.title}
-            </AnchorLink>
-          ))}
-        </div>
+      <div className="flex-none px-2 mx-2 items-center">
+        {/* mobile navbar */}
         <div className="flex lg:hidden space-x-5 justify-end">
           <div className="dropdown dropdown-end">
             <div
@@ -102,6 +95,25 @@ const Header = () => {
             </ul>
           </div>
         </div>
+
+        {/* desktop navbar */}
+        <div className="items-center hidden lg:flex space-x-5">
+          {sections_routes.map((route, index) => (
+            <AnchorLink
+              key={index}
+              href={route.id}
+              className="p-1 border-b-2 font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+            >
+              {route.title}
+            </AnchorLink>
+          ))}
+        </div>
+          <a
+            href="/"
+            className="ml-5 py-3 px-4 border-b-2 rounded font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 bg-indigo-600 text-white hover:bg-indigo-700"
+          >
+            Sign up
+          </a>
       </div>
     </header>
   );

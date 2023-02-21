@@ -7,7 +7,7 @@ const Contact = () => {
         <div className="lg:w-1/2 rounded-lg overflow-hidden sm:mr-10 items-start justify-start relative hidden lg:flex">
           <img src={contact_img} alt="contact-img" />
         </div>
-        <div className="lg:w-1/2 bg-white flex flex-col w-full md:py-8 mt-8 md:mt-0">
+        <div className="lg:w-1/2 bg-white flex flex-col w-full md:py-8 mt-8 md:mt-0 px-8">
           <h2 className="text-3xl font-bold sm:text-4xl">Contact</h2>
           <p className="leading-relaxed my-5">
             Have any questions or feedback for the Qwizbot team? We'd love to

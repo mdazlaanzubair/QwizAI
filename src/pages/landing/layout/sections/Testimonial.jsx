@@ -7,7 +7,7 @@ const Testimonial = () => {
         <h1 className="text-3xl font-bold sm:text-4xl text-gray-900 text-center">
           <strong className="text-primary">Qwizbot</strong> have some fans.
         </h1>
-        <p className="mt-4 text-gray-600 mb-12 text-center w-1/2 mx-auto">
+        <p className="mt-4 text-gray-600 mb-12 text-center lg:w-1/2 mx-auto">
           I don't like to brag, but I don't mind letting my users do it for me.
           Here are a few nice things folks have said about our themes over the
           years.

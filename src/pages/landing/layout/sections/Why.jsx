@@ -25,7 +25,7 @@ const Why = () => {
             {content.why.qna.map((item, index) => (
               <div
                 key={index}
-                className="shadow-md hover:shadow-xl block rounded-xl p-4"
+                className="shadow-md hover:shadow-xl block rounded-xl p-4 col-span-2 md:col-span-1"
               >
                 {/* <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -48,7 +48,7 @@ const Why = () => {
 
                 <h2 className="my-3 font-bold">{item.title}</h2>
 
-                <p className="hidden sm:mt-1 sm:block sm:text-sm text-gray-600">
+                <p className="sm:mt-1 sm:block sm:text-sm text-gray-600">
                   {item.desc}
                 </p>
               </div>
