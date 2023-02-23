@@ -1,3 +1,4 @@
+// HELPER FUNCTION FOR EXTRACTING YEAR LIKE "2022-23" FROM CURRENT DATE
 export const curr_year = (id) => {
   const getElem = document.getElementById(id);
 

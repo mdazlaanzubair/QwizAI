@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-router-dom";
 import app_logo from "../../../../assets/app-logo/logo.png";
 
 const Header = () => {
@@ -65,7 +66,7 @@ const Header = () => {
         <div className="flex lg:hidden space-x-5 justify-end">
           <div className="dropdown dropdown-end">
             <div
-              tabindex="0"
+              tabIndex="0"
               className="p-3 rounded-full hover:bg-indigo-600 hover:text-white text-indigo-600 transition-all ease-in-out duration-500"
             >
               <svg
@@ -84,7 +85,7 @@ const Header = () => {
               </svg>
             </div>
             <ul
-              tabindex="0"
+              tabIndex="0"
               className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
             >
               {sections_routes.map((route, index) => (
@@ -108,12 +109,12 @@ const Header = () => {
             </AnchorLink>
           ))}
         </div>
-          <a
-            href="/"
-            className="ml-5 py-3 px-4 border-b-2 rounded font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 bg-indigo-600 text-white hover:bg-indigo-700"
-          >
-            Sign up
-          </a>
+        <Link
+          to="/signup"
+          className="ml-5 py-3 px-4 border-b-2 rounded font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 bg-indigo-600 text-white hover:bg-indigo-700"
+        >
+          Sign up
+        </Link>
       </div>
     </header>
   );

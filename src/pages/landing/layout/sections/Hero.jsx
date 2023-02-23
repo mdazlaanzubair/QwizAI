@@ -1,4 +1,5 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-router-dom";
 import hero_bg_img from "../../../../assets/illustrations/hero-img.png";
 import { content } from "../../../../utilities/constants/data";
 
@@ -22,8 +23,8 @@ const Hero = () => {
             {content.hero.para2}
             <strong className="text-primary">Qwizbot!</strong>
           </p>
-          <a
-            href="/"
+          <Link
+            to="/signup"
             className="mt-8 mr-3 inline-flex items-center rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
           >
             <span className="text-sm font-medium"> Get Started </span>
@@ -42,7 +43,7 @@ const Hero = () => {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </a>
+          </Link>
           <AnchorLink
             href="#about"
             className="mt-8 inline-flex items-center rounded border border-indigo-600 text-indigo-600 px-8 py-3 bg-white hover:bg-indigo-600 hover:text-white active:border-0"

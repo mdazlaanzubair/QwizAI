@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import app_logo from "../../../assets/app-logo/logo.png";
-import { curr_year } from "../../../utilities/functions/dateFormat";
+import { curr_year } from "../../../utilities/helpers/dateFormat";
 
 const Footer = () => {
   useEffect(() => {

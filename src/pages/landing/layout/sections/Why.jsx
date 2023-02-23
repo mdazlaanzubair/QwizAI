@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { content } from "../../../../utilities/constants/data";
 
 const Why = () => {
@@ -13,12 +14,12 @@ const Why = () => {
             <p className="mt-4 text-gray-600">{content.why.para1}</p>
             <p className="mt-4 text-gray-600">{content.why.para2}</p>
 
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
             >
               Give it a shot
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-4">

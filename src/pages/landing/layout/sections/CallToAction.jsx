@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CallToAction = ({ CTA_image, title, para, btnText }) => {
   return (
     <section className="overflow-hidden bg-slate-100 sm:grid sm:grid-cols-2">
@@ -10,12 +12,12 @@ const CallToAction = ({ CTA_image, title, para, btnText }) => {
           <p className="hidden text-gray-500 md:mt-4 md:block">{para}</p>
 
           <div className="mt-4 md:mt-8">
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
             >
               {btnText}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

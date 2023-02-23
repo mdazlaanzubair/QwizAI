@@ -2,6 +2,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Ques_Ans from "./pages/application/components/Ques_Ans";
 import Dashboard from "./pages/application/Dashboard";
+import Signup from "./pages/application/Signup";
+import Signin from "./pages/application/Signin";
 import Home from "./pages/landing/Home";
 
 function App() {
@@ -13,8 +15,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} exact />
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="qna" element={<Ques_Ans />} />
+          <Route path="/signup" element={<Signup />} exact />
+          <Route path="/signin" element={<Signin />} exact />
+          <Route path="/dashboard" element={<Dashboard />} exact>
+            <Route path="qna" element={<Ques_Ans />} exact />
           </Route>
         </Routes>
       </BrowserRouter>
