@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "react-router-dom";
 import app_logo from "../../../../assets/app-logo/logo.png";
+import { useUserAuth } from "../../../../utilities/context/userAuth";
 
 const Header = () => {
   const sections_routes = [
@@ -38,6 +39,9 @@ const Header = () => {
       title: "Contact",
     },
   ];
+
+  // getting status of logged in user and logout function
+  const { currentUser, logoutUser } = useUserAuth();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -88,17 +92,55 @@ const Header = () => {
               tabIndex="0"
               className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
             >
+              {/* routes to react component */}
+              {/* route for authenticated user */}
+              {currentUser ? (
+                <li>
+                  <Link to="/dashboard">Go to Dashboard</Link>
+                </li>
+              ) : (
+                ""
+              )}
+
+              {/* general in-page routes */}
+              {/* routes for both authenticated and unauthenticated user */}
               {sections_routes.map((route, index) => (
                 <li key={index}>
                   <AnchorLink href={route.id}>{route.title}</AnchorLink>
                 </li>
               ))}
+
+              {/* routes to react component */}
+              {/* route for unauthenticated user i.e. guest/visitor */}
+              {!currentUser ? (
+                <Link
+                  to="/login"
+                  className="mx-2 mb-2 w-auto text-center py-3 px-4 border-b-2 rounded font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 bg-indigo-600 text-white hover:bg-indigo-700"
+                >
+                  Get Started
+                </Link>
+              ) : (
+                ""
+              )}
+
+              {/* routes to react component */}
+              {/* route for authenticated user */}
+              {currentUser ? (
+                <li>
+                  <Link to="/" onClick={() => logoutUser()}>
+                    Logout
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
         </div>
 
         {/* desktop navbar */}
         <div className="items-center hidden lg:flex space-x-5">
+          {/* general in-page routes */}
           {sections_routes.map((route, index) => (
             <AnchorLink
               key={index}
@@ -108,13 +150,43 @@ const Header = () => {
               {route.title}
             </AnchorLink>
           ))}
+          {/* routes to react component */}
+          {currentUser ? (
+            // route for authenticated user
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex="0"
+                className="p-1 border-b-2 font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+              >
+                Profile
+              </div>
+              <ul
+                tabIndex="0"
+                className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link to="/dashboard">{currentUser.email}</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard">Go to Dashboard</Link>
+                </li>
+                <li>
+                  <Link to="/" onClick={() => logoutUser()}>
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            // route for unauthenticated user i.e. guest/visitor
+            <Link
+              to="/login"
+              className="ml-5 py-3 px-4 border-b-2 rounded font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 bg-indigo-600 text-white hover:bg-indigo-700"
+            >
+              Get Started
+            </Link>
+          )}
         </div>
-        <Link
-          to="/signup"
-          className="ml-5 py-3 px-4 border-b-2 rounded font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 bg-indigo-600 text-white hover:bg-indigo-700"
-        >
-          Sign up
-        </Link>
       </div>
     </header>
   );

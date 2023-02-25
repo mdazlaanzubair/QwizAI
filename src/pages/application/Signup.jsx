@@ -1,8 +1,7 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import app_logo from "../../assets/app-logo/logo.png";
-import { registerUser } from "../../utilities/helpers/authenticator";
-import { firebaseAuth } from "../../utilities/helpers/firebaseConfig";
+import { useUserAuth } from "../../utilities/context/userAuth";
 
 const Signup = () => {
   const fname = useRef();
@@ -10,17 +9,23 @@ const Signup = () => {
   const email = useRef();
   const pwd = useRef();
 
+  // initializing navigator to navigate user to dashboard after successful signup
+  const navigator = useNavigate();
+
+  // getting signup function from context
+  const { registerUser } = useUserAuth();
+
   // form submission button
   const handelForm = async (event) => {
     event.preventDefault();
 
     // registering using authenticator
     try {
-      const user = await registerUser(
-        firebaseAuth,
-        email.current.value,
-        pwd.current.value
-      );
+      // registering user and navigating to dashboard
+      const user = await registerUser(email.current.value, pwd.current.value);
+
+      // performing navigation after successful signup
+      navigator("/dashboard");
       console.log(user);
     } catch (error) {
       console.log(error);

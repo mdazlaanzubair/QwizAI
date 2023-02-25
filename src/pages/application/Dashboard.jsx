@@ -5,6 +5,7 @@ import Header from "./layout/Header";
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(false);
+
   return (
     <>
       {/* show spinner when state is loading */}
