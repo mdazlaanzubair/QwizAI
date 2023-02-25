@@ -35,7 +35,7 @@ export default function UserAuthContextProvider({ children }) {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [currentUser,setCurrentUser]);
 
   // this value object contains all the states or functions to be by the nested children
   // storing "utility" helper functions in context state to perform firebase authentication

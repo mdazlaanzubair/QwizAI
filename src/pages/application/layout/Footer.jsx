@@ -5,7 +5,7 @@ import { curr_year } from "../../../utilities/helpers/dateFormat";
 const Footer = () => {
   useEffect(() => {
     curr_year("year");
-  });
+  }, []);
   return (
     <footer className="rounded-xl bg-gray-100">
       <div className="container m-auto space-y-8 px-6 py-16 text-gray-600 md:px-12 lg:px-20">
