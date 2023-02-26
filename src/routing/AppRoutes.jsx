@@ -14,37 +14,51 @@ import Home from "../pages/landing/Home";
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
-  // checking if user is logged in or otherwise
-  const { currentUser } = useUserAuth();
-
   return (
     <BrowserRouter>
       <Routes>
         {/* open routes without protection */}
-        <Route path="/" element={<Home />} exact />
-        <Route path="/signup" element={<Signup />} exact />
-        <Route path="/login" element={<Signin />} exact />
+        <Route exact path="/" element={<Home />} />
 
         {/* restricted routes under protection */}
         <Route
+          exact
+          path="/signup"
+          element={
+            <ProtectedRoute requestedPath="/signup">
+              <Signup />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          exact
+          path="/login"
+          element={
+            <ProtectedRoute requestedPath="/login">
+              <Signin />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          exact
           path="/dashboard"
           element={
-            <ProtectedRoute currentUser={currentUser}>
+            <ProtectedRoute requestedPath="/dashboard">
               <Dashboard />
             </ProtectedRoute>
           }
+        />
+        <Route
           exact
-        >
-          <Route
-            path="qna"
-            element={
-              <ProtectedRoute currentUser={currentUser}>
-                <Ques_Ans />
-              </ProtectedRoute>
-            }
-            exact
-          />
-        </Route>
+          path="/qna"
+          element={
+            <ProtectedRoute requestedPath="/qna">
+              <Ques_Ans />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

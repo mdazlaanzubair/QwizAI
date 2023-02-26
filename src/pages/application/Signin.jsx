@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import app_logo from "../../assets/app-logo/logo.png";
 import { useUserAuth } from "../../utilities/context/userAuth";
 
@@ -7,8 +7,9 @@ const Signin = () => {
   const email = useRef();
   const pwd = useRef();
 
-  // initializing navigator to navigate user to dashboard after successful signup
-  const navigator = useNavigate();
+  // initializing navigator and location
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // getting signin function from context
   const { loginUser } = useUserAuth();
@@ -24,7 +25,7 @@ const Signin = () => {
 
       // performing navigation after successful signup
       if (user) {
-        navigator("/dashboard");
+        navigate(location.state?.from ?? "/dashboard");
       }
     } catch (error) {
       console.log(error);
