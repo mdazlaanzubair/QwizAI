@@ -5,12 +5,11 @@ import { useUserAuth } from "../../../utilities/context/userAuth";
 const Header = () => {
   // grabbing user info
   const { currentUser, logoutUser } = useUserAuth();
-  console.log(currentUser);
 
   return (
     <header
-      id="navbar"
-      className="navbar mb-2 justify-between shadow-lg w-3/4 lg:w-1/2 mx-auto bg-slate-300 rounded-box pb-3"
+      id="navbar2"
+      className="navbar mb-2 justify-between mx-auto rounded-box pb-3 px-20"
     >
       <div className="flex-none px-2 mx-2">
         <a href="/">
@@ -35,6 +34,9 @@ const Header = () => {
               tabIndex="0"
               className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
             >
+              <li>
+                <Link to="/dashboard/analytics">Dashboard</Link>
+              </li>
               <li>
                 <Link to="/dashboard/qna">Question/Answers</Link>
               </li>

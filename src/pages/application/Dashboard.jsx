@@ -12,7 +12,7 @@ const Dashboard = () => {
       {loading ? <Loader /> : ""}
 
       <Header />
-      <div className="container min-h-screen p-5">
+      <div className="min-h-screen min-w-screen">
         <Outlet />
       </div>
       <Footer />

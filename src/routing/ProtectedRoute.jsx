@@ -16,7 +16,10 @@ const ProtectedRoute = ({ requestedPath, children }) => {
   //    >> else proceed the navigation to the requested route i.e. "/login" or "/signup"
   if (requestedPath === "/login" || requestedPath === "/signup") {
     return currentUser ? (
-      <Navigate to={location.state?.from ?? "/dashboard"} replace={true} />
+      <Navigate
+        to={location.state?.from ?? "/dashboard/analytics"}
+        replace={true}
+      />
     ) : (
       children
     );

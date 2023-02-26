@@ -6,6 +6,7 @@ import Ques_Ans from "../pages/application/components/Ques_Ans";
 import Dashboard from "../pages/application/Dashboard";
 import Signup from "../pages/application/Signup";
 import Signin from "../pages/application/Signin";
+import Analytics from "../pages/application/components/Analytics";
 
 // landing page component
 import Home from "../pages/landing/Home";
@@ -49,16 +50,26 @@ const AppRoutes = () => {
               <Dashboard />
             </ProtectedRoute>
           }
-        />
-        <Route
-          exact
-          path="/qna"
-          element={
-            <ProtectedRoute requestedPath="/qna">
-              <Ques_Ans />
-            </ProtectedRoute>
-          }
-        />
+        >
+          <Route
+            exact
+            path="qna"
+            element={
+              <ProtectedRoute requestedPath="/qna">
+                <Ques_Ans />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact
+            path="analytics"
+            element={
+              <ProtectedRoute requestedPath="/qna">
+                <Analytics />
+              </ProtectedRoute>
+            }
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
