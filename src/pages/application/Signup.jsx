@@ -1,3 +1,4 @@
+import { updateProfile } from "firebase/auth";
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import app_logo from "../../assets/app-logo/logo.png";
@@ -24,9 +25,24 @@ const Signup = () => {
       // registering user and navigating to dashboard
       const user = await registerUser(email.current.value, pwd.current.value);
 
-      // performing navigation after successful signup
-      navigator("/dashboard");
-      console.log(user);
+      // submitting username using updating user profile function by firebase
+      // creating user details
+      if (user) {
+        const username = `${fname.current.value} ${fname.current.value}`;
+        const avatar =
+          "https://ui-avatars.com/api/?name=" +
+          fname.current.value +
+          fname.current.value;
+
+        // adding user details to the firebase
+        updateProfile(user, {
+          displayName: username,
+          photoURL: avatar,
+        });
+
+        // performing navigation after successful signup
+        navigator("/dashboard");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -144,7 +160,7 @@ const Signup = () => {
               <p className="text-sm font-light">
                 Already have an account?{" "}
                 <Link
-                  to="/signin"
+                  to="/login"
                   className="font-medium text-indigo-600 hover:underline dark:text-indigo-500"
                 >
                   Sign in

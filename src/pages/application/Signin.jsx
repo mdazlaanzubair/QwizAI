@@ -23,8 +23,9 @@ const Signin = () => {
       const user = await loginUser(email.current.value, pwd.current.value);
 
       // performing navigation after successful signup
-      navigator("/dashboard");
-      console.log(user);
+      if (user) {
+        navigator("/dashboard");
+      }
     } catch (error) {
       console.log(error);
     }
