@@ -3,12 +3,12 @@ import { useEffect, useRef } from "react";
 const Ques_Ans = () => {
   const { form, context, question } = useRef();
 
-  
-
-  useEffect(() => {form.current.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log(e);
-  });}, []);
+  useEffect(() => {
+    form.current.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log(e);
+    });
+  }, []);
 
   return (
     <section id="qna" className="container">

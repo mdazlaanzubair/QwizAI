@@ -24,11 +24,6 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} exact />
         <Route path="/signup" element={<Signup />} exact />
         <Route path="/login" element={<Signin />} exact />
-        {/* <Route
-          path="/dashboard"
-          element={<ProtectedRoute Component={<Dashboard />} />}
-          exact
-        /> */}
 
         {/* restricted routes under protection */}
         <Route

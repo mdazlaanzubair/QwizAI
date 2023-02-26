@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import app_logo from "../../../assets/app-logo/logo.png";
+import { useUserAuth } from "../../../utilities/context/userAuth";
 
 const Header = () => {
+  // grabbing user info
+  const { currentUser, logoutUser } = useUserAuth();
+  console.log(currentUser);
+
   return (
     <header
       id="navbar"
@@ -9,7 +14,7 @@ const Header = () => {
     >
       <div className="flex-none px-2 mx-2">
         <a href="/">
-          <img className="w-36" src={app_logo} alt="Qwizbot logo" />
+          <img className="w-24" src={app_logo} alt="Qwizbot logo" />
         </a>
       </div>
       <div className="flex-none px-2 mx-2 items-center">
@@ -17,22 +22,14 @@ const Header = () => {
           <div className="dropdown dropdown-end">
             <div
               tabIndex="0"
-              className="p-3 rounded-full hover:bg-indigo-600 hover:text-white text-indigo-600 transition-all ease-in-out duration-500"
+              className="flex p-3 cursor-pointer border-0 active:border-0 active:outline-none items-center rounded-full hover:text-indigo-600 text-black transition-all ease-in-out duration-500"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
-                />
-              </svg>
+              <div className="avatar mr-3">
+                <div className="rounded-full w-8 h-8">
+                  <img src={currentUser.photoURL} />
+                </div>
+              </div>
+              <p className="text-sm">{currentUser.displayName}</p>
             </div>
             <ul
               tabIndex="0"
@@ -40,6 +37,11 @@ const Header = () => {
             >
               <li>
                 <Link to="/dashboard/qna">Question/Answers</Link>
+              </li>
+              <li>
+                <Link to="/" onClick={() => logoutUser()}>
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>

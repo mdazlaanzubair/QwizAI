@@ -28,14 +28,15 @@ const Signup = () => {
       // submitting username using updating user profile function by firebase
       // creating user details
       if (user) {
-        const username = `${fname.current.value} ${fname.current.value}`;
+        const username = `${fname.current.value} ${lname.current.value}`;
         const avatar =
-          "https://ui-avatars.com/api/?name=" +
-          fname.current.value +
-          fname.current.value;
+          "https://ui-avatars.com/api/?background=570df8&color=ffffff&name=" +
+          fname.current.value.split(" ")[0] +
+          "+" +
+          lname.current.value;
 
         // adding user details to the firebase
-        updateProfile(user, {
+        updateProfile(user.user, {
           displayName: username,
           photoURL: avatar,
         });
@@ -51,7 +52,7 @@ const Signup = () => {
   return (
     <section id="signup" className="min-h-screen">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-15">
-        <div className="w-full rounded-lg shadow-2xl dark:border md:mt-0 max-w-md xl:p-0">
+        <div className="w-full rounded-lg shadow-2xl md:mt-0 max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <div className="mb-5">
               <Link to="/" className="flex items-center text-2xl font-semibold">

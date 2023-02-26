@@ -34,7 +34,7 @@ const Signin = () => {
   return (
     <section id="signin">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-15">
-        <div className="w-full rounded-lg shadow dark:border md:mt-0 max-w-md xl:p-0">
+        <div className="w-full rounded-lg shadow-2xl md:mt-0 max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <div className="mb-5">
               <Link to="/" className="flex items-center text-2xl font-semibold">
@@ -96,7 +96,13 @@ const Signin = () => {
                     />
                   </div>
                   <div className="ml-3 text-sm">
-                    <label htmlFor="remember">Remember me</label>
+                    <label
+                      htmlFor="remember"
+                      data-tip="Feature not working"
+                      className="tooltip tooltip-neutral"
+                    >
+                      Remember me
+                    </label>
                   </div>
                 </div>
                 <a
@@ -104,7 +110,7 @@ const Signin = () => {
                   data-tip="Feature not working"
                   className="text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-500 tooltip tooltip-neutral"
                 >
-                  htmlForgot password?
+                  Forgot password?
                 </a>
               </div>
               <button

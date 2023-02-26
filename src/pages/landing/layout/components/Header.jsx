@@ -90,14 +90,19 @@ const Header = () => {
             </div>
             <ul
               tabIndex="0"
-              className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
+              className="p-2 shadow menu dropdown-content bg-base-200 rounded-box w-52"
             >
               {/* routes to react component */}
               {/* route for authenticated user */}
               {currentUser ? (
-                <li>
-                  <Link to="/dashboard">Go to Dashboard</Link>
-                </li>
+                <>
+                  <li>
+                    <Link to="/">{currentUser.displayName}</Link>
+                  </li>
+                  <li>
+                    <Link to="/dashboard">Go to Dashboard</Link>
+                  </li>
+                </>
               ) : (
                 ""
               )}
@@ -153,24 +158,24 @@ const Header = () => {
           {/* routes to react component */}
           {currentUser ? (
             // route for authenticated user
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end dropdown-hover">
               <div
                 tabIndex="0"
-                className="p-1 border-b-2 font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700 hover:border-b-indigo-600"
+                className="p-1 border-b-2 font-bold uppercase text-xs border-transparent transition-all ease-in-out duration-500 hover:text-indigo-700"
               >
                 Profile
               </div>
               <ul
                 tabIndex="0"
-                className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
+                className="p-2 shadow menu dropdown-content bg-base-200 rounded-box w-52"
               >
-                <li>
-                  <Link to="/dashboard">{currentUser.email}</Link>
+                <li className="text-sm">
+                  <Link to="/">{currentUser.displayName}</Link>
                 </li>
-                <li>
+                <li className="text-sm">
                   <Link to="/dashboard">Go to Dashboard</Link>
                 </li>
-                <li>
+                <li className="text-sm">
                   <Link to="/" onClick={() => logoutUser()}>
                     Logout
                   </Link>
