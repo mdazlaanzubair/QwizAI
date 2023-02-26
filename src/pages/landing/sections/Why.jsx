@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { content } from "../../../../utilities/constants/data";
+import { content } from "../../../utilities/constants/data";
 
 const Why = () => {
   return (

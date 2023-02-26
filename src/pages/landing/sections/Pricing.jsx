@@ -1,4 +1,4 @@
-import pricing_bg from "../../../../assets/illustrations/asset_1.png";
+import pricing_bg from "../../../assets/illustrations/asset_1.png";
 
 const Pricing = () => {
   return (

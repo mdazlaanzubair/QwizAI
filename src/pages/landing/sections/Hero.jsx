@@ -1,7 +1,7 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "react-router-dom";
-import hero_bg_img from "../../../../assets/illustrations/hero-img.png";
-import { content } from "../../../../utilities/constants/data";
+import hero_bg_img from "../../../assets/illustrations/hero-img.png";
+import { content } from "../../../utilities/constants/data";
 
 const Hero = () => {
   return (

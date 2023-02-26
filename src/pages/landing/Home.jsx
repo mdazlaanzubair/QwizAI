@@ -4,18 +4,18 @@ import cta_img_2 from "../../assets/illustrations/asset_1.png";
 import { content } from "../../utilities/constants/data";
 
 // components import
-import Header from "./layout/components/Header";
-import Footer from "./layout/components/Footer";
-import Hero from "./layout/sections/Hero";
-import About from "./layout/sections/About";
-import Features from "./layout/sections/Features";
-import CallToAction from "./layout/sections/CallToAction";
-import Pricing from "./layout/sections/Pricing";
-import Why from "./layout/sections/Why";
-import Testimonial from "./layout/sections/Testimonial";
-import Faq from "./layout/sections/Faq";
-import Contact from "./layout/sections/Contact";
-import JumpToTop from "./layout/components/JumpToTop";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Features from "./sections/Features";
+import CallToAction from "./sections/CallToAction";
+import Pricing from "./sections/Pricing";
+import Why from "./sections/Why";
+import Testimonial from "./sections/Testimonial";
+import Faq from "./sections/Faq";
+import Contact from "./sections/Contact";
+import JumpToTop from "./components/JumpToTop";
 
 const Home = () => {
   const [showJumpBtn, setShowJumpBtn] = useState(false);

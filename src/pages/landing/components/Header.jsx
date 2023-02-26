@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "react-router-dom";
-import app_logo from "../../../../assets/app-logo/logo.png";
-import { useUserAuth } from "../../../../utilities/context/userAuth";
+import app_logo from "../../../assets/app-logo/logo.png";
+import { useUserAuth } from "../../../utilities/context/userAuth";
 
 const Header = () => {
   const sections_routes = [

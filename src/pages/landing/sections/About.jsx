@@ -1,5 +1,5 @@
-import { content } from "../../../../utilities/constants/data";
-import about_img from "../../../../assets/illustrations/about-img.png";
+import { content } from "../../../utilities/constants/data";
+import about_img from "../../../assets/illustrations/about-img.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const About = () => {

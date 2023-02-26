@@ -1,5 +1,5 @@
-import { content } from "../../../../utilities/constants/data";
-import features_bg from "../../../../assets/illustrations/feature-section-bg.jpg";
+import { content } from "../../../utilities/constants/data";
+import features_bg from "../../../assets/illustrations/feature-section-bg.jpg";
 
 const Features = () => {
   return (
