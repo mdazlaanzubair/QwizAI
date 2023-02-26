@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useUserAuth } from "../../../utilities/context/userAuth";
+import { getQnaSessionFromDB } from "../../../utilities/helpers/qnaCrud";
 import SaveQnaModel from "./SaveQnaModel";
 
 const Ques_Ans = () => {
@@ -41,7 +42,11 @@ const Ques_Ans = () => {
     question.current.value = "";
   };
 
-  useEffect(() => console.log(qnaSession), [qnaSession]);
+  useEffect(() => {
+    getQnaSessionFromDB();
+
+    console.log(qnaSession);
+  }, [qnaSession]);
 
   return (
     <section id="qna" className="container mx-auto">
