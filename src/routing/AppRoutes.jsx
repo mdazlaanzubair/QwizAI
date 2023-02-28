@@ -64,7 +64,7 @@ const AppRoutes = () => {
             exact
             path="analytics"
             element={
-              <ProtectedRoute requestedPath="/qna">
+              <ProtectedRoute requestedPath="/analytics">
                 <Analytics />
               </ProtectedRoute>
             }

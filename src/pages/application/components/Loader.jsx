@@ -16,7 +16,7 @@ const Loader = () => {
       />
       <h1 className="mt-12 text-2xl lg:text-3xl font-bold">Please Wait!</h1>
       <h1 className="my-3 text-xl lg:text-xl">
-        While <strong className="text-indigo-600">Qwizbot</strong> is processing
+        While <strong className="text-indigo-600">Qwizbot</strong> is preparing
         . . .
       </h1>
     </div>

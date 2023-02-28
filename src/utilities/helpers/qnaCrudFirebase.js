@@ -1,11 +1,10 @@
 import { firebaseDB } from "./firebaseConfig";
 import { collection, getDocs, addDoc } from "@firebase/firestore";
-import { async } from "@firebase/util";
 
 const qnaCollectionRef = collection(firebaseDB, "question_ans");
 
 // function to grab all qna sessions from firebase
-export const getQnaSessionFromDB = async () => {
+export const getQnaSessionsFromDB = async () => {
   const data = await getDocs(qnaCollectionRef);
   const allQnaSessions = data.docs.map((doc) => ({
     ...doc.data(),

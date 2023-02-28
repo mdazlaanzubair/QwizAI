@@ -1,20 +1,22 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
 import { createQnaSessionAtDB } from "../../../utilities/helpers/qnaCrudFirebase";
 
 const SaveQnaModel = ({ qnaSession }) => {
-  const title = useRef();
+  const [title, setTitle] = useState();
 
+  // function to update title in qnaSession
   const saveContextToDB = async () => {
-    const session = {
-      title: title.current.value,
-      para: qnaSession.para,
-      qna: qnaSession.qna,
-      userName: qnaSession.userName,
-      userEmail: qnaSession.userEmail,
-    };
-    const msg = await createQnaSessionAtDB(session);
-    console.log(session);
-    console.log(msg);
+    // title added
+    qnaSession.title = title;
+
+    // calling firebase function to save session to the cloud
+    const msg = await createQnaSessionAtDB(qnaSession);
+
+    // generating alert to inform user
+    toast.success("Your session is successfully saved!", {
+      position: "top-right",
+    });
   };
 
   return (
@@ -25,10 +27,11 @@ const SaveQnaModel = ({ qnaSession }) => {
             Save this session for future reference
           </label>
           <input
-            ref={title}
             id="title"
             className="text-sm border-2 rounded-md p-3 border-slate-100 hover:border-slate-200 active:border-slate-300 focus:border-indigo-600 focus:outline-none"
             placeholder="Name it something"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
           />
         </div>
         <div className="modal-action flex justify-between">
