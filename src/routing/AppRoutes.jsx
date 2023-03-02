@@ -42,7 +42,6 @@ const AppRoutes = () => {
         />
 
         <Route
-          exact
           path="/dashboard"
           element={
             <ProtectedRoute requestedPath="/dashboard">
