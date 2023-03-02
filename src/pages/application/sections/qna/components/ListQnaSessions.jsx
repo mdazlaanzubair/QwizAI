@@ -22,7 +22,15 @@ const ListQnaSessions = () => {
       <div className="flex flex-col w-full">
         <h1 className="flex justify-between text-3xl lg:text-4xl mb-5 font-bold">
           Prevision QnA Sessions
-          <button type="button" onClick={() => fetchIt()}>
+          <button
+            type="button"
+            onClick={() => {
+              fetchIt();
+              toast.info("Data fetched successfully!", {
+                position: "top-right",
+              });
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
