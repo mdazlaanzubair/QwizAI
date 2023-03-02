@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "react-router-dom";
 import app_logo from "../../../assets/app-logo/logo.png";
@@ -43,9 +43,12 @@ const Header = () => {
   // getting status of logged in user and logout function
   const { currentUser, logoutUser } = useUserAuth();
 
+  // creating reference to get navbar
+  const navbar = useRef();
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      const element = document.getElementById("navbar");
+      const element = navbar.current;
       if (window.pageYOffset >= 150) {
         element.classList.add(
           ...["sticky", "top-0", "z-10", "bg-white", "shadow-lg", "py-5"]
@@ -59,7 +62,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header id="navbar" className="navbar mb-2 justify-between">
+    <header ref={navbar} id="navbar" className="navbar mb-2 justify-between">
       <div className="flex-none px-2 mx-2">
         <a href="/">
           <img className="w-36" src={app_logo} alt="Qwizbot logo" />
