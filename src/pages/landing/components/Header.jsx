@@ -100,7 +100,7 @@ const Header = () => {
                     <Link to="/">{currentUser.displayName}</Link>
                   </li>
                   <li>
-                    <Link to="/dashboard/analytics">Go to Dashboard</Link>
+                    <Link to="/dashboard/qna">Go to QnA</Link>
                   </li>
                 </>
               ) : (
@@ -173,7 +173,7 @@ const Header = () => {
                   <Link to="/">{currentUser.displayName}</Link>
                 </li>
                 <li className="text-sm">
-                  <Link to="/dashboard/analytics">Go to Dashboard</Link>
+                  <Link to="/dashboard/qna">Go to QnA</Link>
                 </li>
                 <li className="text-sm">
                   <Link to="/" onClick={() => logoutUser()}>

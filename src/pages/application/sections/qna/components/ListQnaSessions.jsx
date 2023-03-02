@@ -41,7 +41,7 @@ const ListQnaSessions = () => {
                       })
                     }
                   >
-                    <p className="link-primary font-bold">Copy Context</p>
+                    <span className="link-primary font-bold">Copy Context</span>
                   </CopyToClipboard>
                 </p>
 

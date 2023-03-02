@@ -21,7 +21,7 @@ export const registerUser = async (email, password) => {
     );
 
     // toaster alert
-    toast.success("You account has been successfully created!", {
+    toast.success("Your account has been successfully created!", {
       position: "top-right",
     });
     return user;
@@ -48,7 +48,7 @@ export const loginUser = async (email, password) => {
     );
 
     // toaster alert
-    toast.success("You successfully logged in!", {
+    toast.success("You're successfully logged in!", {
       position: "top-right",
     });
     return user;
@@ -69,7 +69,7 @@ export const logoutUser = async () => {
   try {
     await signOut(firebaseAuth);
     // toaster alert
-    toast.success("You successfully logged out!", {
+    toast.success("You're successfully logged out!", {
       position: "top-right",
     });
 

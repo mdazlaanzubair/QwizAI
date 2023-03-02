@@ -35,9 +35,6 @@ const Header = () => {
               className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/dashboard/analytics">Dashboard</Link>
-              </li>
-              <li>
                 <Link to="/dashboard/qna">Question/Answers</Link>
               </li>
               <li>
