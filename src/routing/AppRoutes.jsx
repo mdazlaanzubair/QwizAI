@@ -39,7 +39,7 @@ const AppRoutes = () => {
           }
         />
 
-        <Route
+        {/* <Route
           path="/dashboard"
           element={
             <ProtectedRoute requestedPath="/dashboard">
@@ -51,7 +51,19 @@ const AppRoutes = () => {
             path="qna"
             element={
               <ProtectedRoute requestedPath="/dashboard/qna">
-                {/* QnaContextProvider wrapper */}
+                <QnaContextProvider>
+                  <Ques_Ans />
+                </QnaContextProvider>
+              </ProtectedRoute>
+            }
+          />
+        </Route> */}
+
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route
+            path="qna"
+            element={
+              <ProtectedRoute requestedPath="/dashboard/qna">
                 <QnaContextProvider>
                   <Ques_Ans />
                 </QnaContextProvider>

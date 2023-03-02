@@ -11,12 +11,14 @@ import AppContextProvider from "./utilities/context/app/AppContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* AuthContext wrapper */}
-    <UserAuthContextProvider>
-      <AppContextProvider>
+    {/* AppContext wrapper */}
+    <AppContextProvider>
+      {/* AuthContext wrapper */}
+      <UserAuthContextProvider>
         <App />
-      </AppContextProvider>
-    </UserAuthContextProvider>
+      </UserAuthContextProvider>
+    </AppContextProvider>
+
     {/* toastify blank container to display toasts */}
     <ToastContainer
       position="top-right"

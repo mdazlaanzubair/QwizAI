@@ -5,6 +5,7 @@ import { useUserAuth } from "../../../utilities/context/auth/AuthContext";
 const Header = () => {
   // grabbing user info
   const { currentUser, logoutUser } = useUserAuth();
+  console.log(useUserAuth())
 
   return (
     <header className="navbar mb-2 justify-between mx-auto rounded-box pb-3 px-20">
