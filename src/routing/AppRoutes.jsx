@@ -51,7 +51,6 @@ const AppRoutes = () => {
           }
         >
           <Route
-            exact
             path="qna"
             element={
               <ProtectedRoute requestedPath="/qna">
