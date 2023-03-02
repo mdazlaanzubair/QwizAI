@@ -7,10 +7,7 @@ const Header = () => {
   const { currentUser, logoutUser } = useUserAuth();
 
   return (
-    <header
-      id="navbar2"
-      className="navbar mb-2 justify-between mx-auto rounded-box pb-3 px-20"
-    >
+    <header className="navbar mb-2 justify-between mx-auto rounded-box pb-3 px-20">
       <div className="flex-none px-2 mx-2">
         <a href="/">
           <img className="w-24" src={app_logo} alt="Qwizbot logo" />

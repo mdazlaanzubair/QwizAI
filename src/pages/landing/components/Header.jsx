@@ -49,6 +49,8 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const element = navbar.current;
+      // ensuring that the navbar element is available before accessing its property
+      if (!element) return;
       if (window.pageYOffset >= 150) {
         element.classList.add(
           ...["sticky", "top-0", "z-10", "bg-white", "shadow-lg", "py-5"]
