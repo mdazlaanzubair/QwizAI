@@ -1,7 +1,7 @@
-import { firebaseDB } from "./firebaseConfig";
+import { firebaseDB } from "../../firebaseConfig";
 import { collection, getDocs, addDoc } from "@firebase/firestore";
 
-const qnaCollectionRef = collection(firebaseDB, "question_ans");
+const qnaCollectionRef = collection(firebaseDB, "qna_sessions");
 
 // function to grab all qna sessions from firebase
 export const getQnaSessionsFromDB = async () => {
@@ -16,5 +16,5 @@ export const getQnaSessionsFromDB = async () => {
 // function to create new qna session in firebase
 export const createQnaSessionAtDB = async (session) => {
   await addDoc(qnaCollectionRef, session);
-  return "QnA Created.";
+  return "Your session is successfully saved!";
 };

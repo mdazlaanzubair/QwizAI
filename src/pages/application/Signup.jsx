@@ -2,7 +2,7 @@ import { updateProfile } from "firebase/auth";
 import { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import app_logo from "../../assets/app-logo/logo.png";
-import { useUserAuth } from "../../utilities/context/userAuth";
+import { useUserAuth } from "../../utilities/context/auth/AuthContext";
 
 const Signup = () => {
   const fname = useRef();
@@ -43,7 +43,7 @@ const Signup = () => {
         });
 
         // performing navigation after successful signup
-        navigate(location.state?.from ?? "/dashboard");
+        navigate(location.state?.from ?? "/dashboard/qna");
       }
     } catch (error) {
       console.log(error);

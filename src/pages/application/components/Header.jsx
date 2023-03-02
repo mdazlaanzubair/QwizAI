@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import app_logo from "../../../assets/app-logo/logo.png";
-import { useUserAuth } from "../../../utilities/context/userAuth";
+import { useUserAuth } from "../../../utilities/context/auth/AuthContext";
 
 const Header = () => {
   // grabbing user info

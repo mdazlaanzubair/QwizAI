@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import app_logo from "../../assets/app-logo/logo.png";
-import { useUserAuth } from "../../utilities/context/userAuth";
+import { useUserAuth } from "../../utilities/context/auth/AuthContext";
 
 const Signin = () => {
   const email = useRef();
@@ -25,7 +25,7 @@ const Signin = () => {
 
       // performing navigation after successful signup
       if (user) {
-        navigate(location.state?.from ?? "/dashboard");
+        navigate(location.state?.from ?? "/dashboard/qna");
       }
     } catch (error) {
       console.log(error);

@@ -1,18 +1,17 @@
-import { useUserAuth } from "../utilities/context/userAuth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // application components
-import Ques_Ans from "../pages/application/components/Ques_Ans";
+import Ques_Ans from "../pages/application/sections/qna/Ques_Ans";
 import Dashboard from "../pages/application/Dashboard";
 import Signup from "../pages/application/Signup";
 import Signin from "../pages/application/Signin";
-import Analytics from "../pages/application/components/Analytics";
 
 // landing page component
 import Home from "../pages/landing/Home";
 
 // protected component
 import ProtectedRoute from "./ProtectedRoute";
+import QnaContextProvider from "../utilities/context/qna/QnaContext";
 
 const AppRoutes = () => {
   return (
@@ -56,16 +55,10 @@ const AppRoutes = () => {
             path="qna"
             element={
               <ProtectedRoute requestedPath="/qna">
-                <Ques_Ans />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            exact
-            path="analytics"
-            element={
-              <ProtectedRoute requestedPath="/analytics">
-                <Analytics />
+                {/* QnaContextProvider wrapper */}
+                <QnaContextProvider>
+                  <Ques_Ans />
+                </QnaContextProvider>
               </ProtectedRoute>
             }
           />

@@ -1,9 +1,8 @@
-import React from "react";
-import { FidgetSpinner } from "react-loader-spinner";
+import { FidgetSpinner, Watch } from "react-loader-spinner";
 
-const Loader = () => {
+const ModelLoader = () => {
   return (
-    <div className="flex flex-col justify-center items-center fixed top-0 left-0 bg-white w-screen h-screen">
+    <div className="flex flex-col justify-center items-center fixed top-0 left-0 bg-white w-screen h-screen z-50">
       <FidgetSpinner
         visible={true}
         height="80"
@@ -23,4 +22,22 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+const ProcessingLoader = () => {
+  return (
+    <div className="flex flex-col justify-center items-center fixed top-0 left-0 bg-white w-screen h-screen z-50">
+      <Watch
+        height="80"
+        width="80"
+        radius="48"
+        color="#111827"
+        ariaLabel="watch-loading"
+        visible={true}
+      />
+      <h1 className="mt-12 text-2xl lg:text-3xl font-bold">
+        Please wait while processing!
+      </h1>
+    </div>
+  );
+};
+
+export { ModelLoader, ProcessingLoader };

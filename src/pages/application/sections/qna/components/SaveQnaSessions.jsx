@@ -1,26 +1,47 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { createQnaSessionAtDB } from "../../../utilities/helpers/qnaCrudFirebase";
+import { useQnaContext } from "../../../../../utilities/context/qna/QnaContext";
+import { useUserAuth } from "../../../../../utilities/context/auth/AuthContext";
+import { createQnaSessionAtDB } from "../../../../../utilities/helpers/firebase-helpers/crud/qnaSessions";
+import { useAppContext } from "../../../../../utilities/context/app/AppContext";
 
-const SaveQnaModel = ({ qnaSession }) => {
+const SaveQnaSessions = () => {
   const [title, setTitle] = useState();
+  // getting states from context
+  const { currentUser } = useUserAuth();
+  const { setIsProcessing } = useAppContext();
+  const { paragraph, qna } = useQnaContext();
 
   // function to update title in qnaSession
-  const saveContextToDB = async () => {
-    // title added
-    qnaSession.title = title;
+  const saveSessionToDB = async () => {
+    // changing processing state
+    setIsProcessing(true);
+
+    // creating session
+    const session = {
+      title: title,
+      para: paragraph,
+      qna: qna,
+      user: {
+        email: currentUser.email,
+        name: currentUser.displayName,
+      },
+    };
 
     // calling firebase function to save session to the cloud
-    const msg = await createQnaSessionAtDB(qnaSession);
+    const msg = await createQnaSessionAtDB(session);
 
     // generating alert to inform user
-    toast.success("Your session is successfully saved!", {
+    toast.success(msg, {
       position: "top-right",
     });
+
+    // changing processing state
+    setIsProcessing(false);
   };
 
   return (
-    <div id="save-qna-modal" className="modal">
+    <div id="save-qna-modal" className="modal text-gray-900">
       <div className="modal-box">
         <div className="form-control mb-2">
           <label className="label font-semibold" htmlFor="title">
@@ -38,7 +59,7 @@ const SaveQnaModel = ({ qnaSession }) => {
           <a
             href="#save-qna-modal-close"
             className="btn rounded-md grow mb-3 bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 border-none"
-            onClick={() => saveContextToDB()}
+            onClick={() => saveSessionToDB()}
           >
             Save
           </a>
@@ -54,4 +75,4 @@ const SaveQnaModel = ({ qnaSession }) => {
   );
 };
 
-export default SaveQnaModel;
+export default SaveQnaSessions;

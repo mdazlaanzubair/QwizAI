@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { useUserAuth } from "../utilities/context/userAuth";
+import { useUserAuth } from "../utilities/context/auth/AuthContext";
 
 // here "children" is the element being passed in "ProtectedRoute"
 const ProtectedRoute = ({ requestedPath, children }) => {

@@ -1,8 +1,11 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
-import { loginUser, logoutUser, registerUser } from "../helpers/authenticator";
-import { firebaseAuth } from "../helpers/firebaseConfig";
-// import { firebaseAuth } from "../helpers/firebaseConfig";
+import {
+  loginUser,
+  logoutUser,
+  registerUser,
+} from "../../helpers/authenticator";
+import { firebaseAuth } from "../../helpers/firebaseConfig";
 
 // initializing context for application to deal with the user authentication
 const UserAuthContext = createContext(null);
@@ -35,7 +38,7 @@ export default function UserAuthContextProvider({ children }) {
     return () => {
       unsubscribe();
     };
-  }, [currentUser,setCurrentUser]);
+  }, [currentUser, setCurrentUser]);
 
   // this value object contains all the states or functions to be by the nested children
   // storing "utility" helper functions in context state to perform firebase authentication
