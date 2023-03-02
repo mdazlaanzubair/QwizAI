@@ -53,7 +53,7 @@ const AppRoutes = () => {
           <Route
             path="qna"
             element={
-              <ProtectedRoute requestedPath="/qna">
+              <ProtectedRoute requestedPath="/dashboard/qna">
                 {/* QnaContextProvider wrapper */}
                 <QnaContextProvider>
                   <Ques_Ans />
