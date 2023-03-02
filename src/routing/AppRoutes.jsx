@@ -22,7 +22,6 @@ const AppRoutes = () => {
 
         {/* restricted routes under protection */}
         <Route
-          exact
           path="/signup"
           element={
             <ProtectedRoute requestedPath="/signup">
@@ -32,7 +31,6 @@ const AppRoutes = () => {
         />
 
         <Route
-          exact
           path="/login"
           element={
             <ProtectedRoute requestedPath="/login">
@@ -52,7 +50,7 @@ const AppRoutes = () => {
           <Route
             path="qna"
             element={
-              <ProtectedRoute requestedPath="/qna">
+              <ProtectedRoute requestedPath="/dashboard/qna">
                 {/* QnaContextProvider wrapper */}
                 <QnaContextProvider>
                   <Ques_Ans />
