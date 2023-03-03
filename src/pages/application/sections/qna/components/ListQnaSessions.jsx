@@ -19,7 +19,7 @@ const ListQnaSessions = () => {
 
   return (
     <div className="w-full my-3">
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full m-3">
         <h1 className="flex justify-between text-3xl lg:text-4xl mb-5 font-bold">
           Prevision QnA Sessions
           <button
@@ -49,7 +49,7 @@ const ListQnaSessions = () => {
         </h1>
         <p>Here is the list of AI powered QnA sessions you saved previously.</p>
       </div>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full m-3">
         <div className="columns-1 md:columns-2">
           {sessions.length > 0 ? (
             sessions.map((session, index) => (

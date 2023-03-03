@@ -5,10 +5,9 @@ import { useUserAuth } from "../../../utilities/context/auth/AuthContext";
 const Header = () => {
   // grabbing user info
   const { currentUser, logoutUser } = useUserAuth();
-  console.log(useUserAuth())
 
   return (
-    <header className="navbar mb-2 justify-between mx-auto rounded-box pb-3 px-20">
+    <header className="navbar mb-2 justify-between mx-auto rounded-box pb-3 lg:px-20">
       <div className="flex-none px-2 mx-2">
         <a href="/">
           <img className="w-24" src={app_logo} alt="Qwizbot logo" />

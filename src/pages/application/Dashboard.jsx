@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen min-w-screen">
+      <div className="container min-h-screen min-w-screen px-5">
         <Outlet />
       </div>
       <Footer />

@@ -1,5 +1,3 @@
-import pricing_bg from "../../../assets/illustrations/asset_1.png";
-
 const Pricing = () => {
   return (
     <section id="pricing" className="text-gray-600 body-font overflow-hidden">
@@ -93,7 +91,9 @@ const Pricing = () => {
               </h2>
               <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                 <span>$38</span>
-                <span className="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                <span className="text-lg ml-1 font-normal text-gray-500">
+                  /mo
+                </span>
               </h1>
               <p className="flex items-center text-gray-600 mb-2">
                 <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -174,7 +174,9 @@ const Pricing = () => {
               </h2>
               <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                 <span>$56</span>
-                <span className="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                <span className="text-lg ml-1 font-normal text-gray-500">
+                  /mo
+                </span>
               </h1>
               <p className="flex items-center text-gray-600 mb-2">
                 <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -282,7 +284,9 @@ const Pricing = () => {
               </h2>
               <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                 <span>$72</span>
-                <span className="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                <span className="text-lg ml-1 font-normal text-gray-500">
+                  /mo
+                </span>
               </h1>
               <p className="flex items-center text-gray-600 mb-2">
                 <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">

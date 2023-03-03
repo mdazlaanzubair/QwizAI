@@ -29,7 +29,7 @@ const Ques_Ans = () => {
   }, [isModelLoaded]);
 
   return (
-    <section id="qna" className="container mx-auto">
+    <section id="qna">
       {/* loading states of the application */}
       {isProcessing ? (
         <ProcessingLoader />
@@ -38,7 +38,7 @@ const Ques_Ans = () => {
       ) : (
         ""
       )}
-      <div className="flex flex-col lg:flex-row justify-center px-10">
+      <div className="flex flex-col lg:flex-row justify-center">
         <div className="flex flex-col w-full m-3 lg:w-4/12">
           <h1 className="text-3xl lg:text-4xl mb-5 font-bold">Ask Qwizbot</h1>
           <p>
@@ -91,7 +91,7 @@ const Ques_Ans = () => {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col justify-center px-10 my-5">
+      <div className="flex flex-col justify-center">
         <ListQnaSessions />
       </div>
     </section>

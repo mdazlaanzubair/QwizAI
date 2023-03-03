@@ -35,7 +35,7 @@ const QnaForm = () => {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col justify-center my-3 p-5 shadow-md rounded-md">
+      <div className="flex flex-col justify-center my-3 p-5 shadow-lg rounded-md">
         <div className="form-control my-3">
           <label htmlFor="context" className="text-base font-bold mb-2">
             Context
@@ -65,30 +65,28 @@ const QnaForm = () => {
           <button
             onClick={() => askQuestion()}
             type="text"
-            className="lg:mx-2 btn btn-primary bg-indigo-600 grow"
+            className="btn btn-primary bg-indigo-600 lg:grow m-2"
           >
             Ask it out!
           </button>
-          <div className="btn-group lg:mx-2">
-            <a href="#save-qna-modal" className=" btn btn-neutral shrink">
-              Save
-            </a>
-            <button
-              onClick={() => {
-                setQuestion("");
-                setParagraph("");
-                setQna([]);
-                // generating alert to inform user
-                toast.success("All cleared successfully!", {
-                  position: "top-right",
-                });
-              }}
-              type="text"
-              className="btn btn-outline btn-neutral shrink"
-            >
-              Clear
-            </button>
-          </div>
+          <a href="#save-qna-modal" className="btn btn-success m-2">
+            Save
+          </a>
+          <button
+            onClick={() => {
+              setQuestion("");
+              setParagraph("");
+              setQna([]);
+              // generating alert to inform user
+              toast.success("All cleared successfully!", {
+                position: "top-right",
+              });
+            }}
+            type="text"
+            className="btn btn-outline btn-error m-2"
+          >
+            Clear
+          </button>
         </div>
       </div>
 
